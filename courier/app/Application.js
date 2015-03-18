@@ -9,7 +9,7 @@ Ext.define('Courier.Application', {
     name: 'Courier',
 
     stores: [
-        // TODO: add global / shared stores here
+        'Packages'
     ],
     
     launch: function () {

@@ -26,6 +26,9 @@
     },
     "index.html.tpl.merge": {
       "349bb3bac7fdf5ede4da07cbbf7ea56bac1107e9": "eJxNkE1PwzAMhu/7FV7uoVcOSSVUhkACgUQnwTFNPJqRLxJ3UCH+OyndAV/88fi1Xllsrx+7/vVpB7f9w327ESN5B14Fe8BCkrFlhMq0G6ghPJKCkShx/JjsSbIXvr/iXfRJkR0cMtAxEIaqvNtJNG/I/iv1qHLBCvf9Db+saGVkyWH7HZTHH9Gs3RltOYd+RHA2IAzo4if4qVAt4R0TgQ2kNMEhZnjGUO9D5w1QhGGyzsAcpwwqJWd1NRgDcH72U3S2i95I5q3O0UVlMDOgOaFkhF/UHNVJrWsMStaSDTFSoazSxbGwVjQrrFZFs/5IDNHMFfylZVqf2W5+AaJJcgQ\u003d"
+    },
+    "{modelFileName}.js.tpl.merge": {
+      "31d5356142a167c72422f7902f19df3c583f3249": "eJxlUcFugzAMvfMVVqUq0CLorlC6w7TrfgBxSMG00dKAktAxRfn3GWg7rfMhdvKeX16c99EmDbZCYcjcpWtQfvALmp7X6BOnqPYsBhcABY4WVZMBc0du8E1yYwicoXlpBcrGZFC69byf4srlgCZZICggbAdVW9Epquaz6CZ+j7bTEF65Bo2W+GUVQ8+1nXqXhsT0UtiQxSyKQdDxLqe0X1iJRHWy5xy2W/GsvNjR0FLPTC5FdRfLWJT/I5ODpB/MOXQwDSKDttyRHfvdz/VLBf6pywfBk8Cg1ZTyX8BH4Z+h3CTWfm97OT2/WC3A6vDouRtgjx9ZTDA3Zc/AuxLCUagGRygKGOtuUDaCV2AMiBYzqPw+pQsOgVtDuoGj5OoTJP072I4cNkONcEF9Qqg71UpR08i/0sGgBmwEbTYpeZwdVcH07h/XJaFF"
     }
   },
   "targets": {
@@ -252,6 +255,18 @@
         "viewFileName": "Main",
         "viewName": "Main",
         "viewNamespace": "Courier.view"
+      }
+    },
+    "app/model/Package.js": {
+      "source": "{modelFileName}.js.tpl.merge",
+      "version": "31d5356142a167c72422f7902f19df3c583f3249",
+      "parameters": {
+        "appName": "Courier",
+        "baseClass": "Ext.data.Model",
+        "fields": "id:int:null,description:string:null,location:int:null",
+        "modelFileName": "Package",
+        "modelNamespace": "Courier.model",
+        "name": "Package"
       }
     }
   }
