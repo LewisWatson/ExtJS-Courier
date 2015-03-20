@@ -23,6 +23,13 @@ Ext.define('Courier.controller.view.parcel.Grid', {
         });
 
         window.down('form').loadRecord(parcel);
+        window.setTitle(window.getTitle() + ': ' + parcel.get('description'));
         window.show();
+
+        this.deleteParcel(parcel);
+    },
+
+    deleteParcel: function(parcel) {
+        this.getApplication().fireEvent('deleteParcel', parcel);
     }
 });

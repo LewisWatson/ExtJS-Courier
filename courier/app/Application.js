@@ -12,6 +12,11 @@ Ext.define('Courier.Application', {
         'Packages'
     ],
     
+    controllers: [
+        'Parcel',
+    	'view.parcel.Grid'
+    ],
+
     launch: function () {
         // TODO - Launch the application
     }

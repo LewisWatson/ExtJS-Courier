@@ -6,7 +6,7 @@ Ext.define("Courier.view.parcel.Grid",{
     store: "Packages",
 
     columns: [{
-    	text: "id", dataIndex: "id"
+    	dataIndex: "id"
     }, {
     	text: "Description", dataIndex: "description", flex: 1
     }]
