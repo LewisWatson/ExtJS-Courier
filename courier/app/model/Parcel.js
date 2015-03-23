@@ -1,4 +1,4 @@
-Ext.define('Courier.model.Package', {
+Ext.define('Courier.model.Parcel', {
     extend: 'Ext.data.Model',
     
     fields: [

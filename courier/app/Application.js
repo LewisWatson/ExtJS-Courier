@@ -9,11 +9,10 @@ Ext.define('Courier.Application', {
     name: 'Courier',
 
     stores: [
-        'Packages'
+        'Parcels'
     ],
     
-    controllers: [
-        'Parcel',
+	controllers: [
     	'view.parcel.Grid'
     ],
 

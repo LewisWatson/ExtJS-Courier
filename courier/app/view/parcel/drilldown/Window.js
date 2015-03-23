@@ -1,8 +1,7 @@
-
 Ext.define("Courier.view.parcel.drilldown.Window",{
     extend: "Ext.window.Window",
     requires: [
-    	'Courier.view.parcel.drilldown.Panel'
+        'Courier.view.parcel.drilldown.Panel'
     ],
 
     title: 'Parcel',
@@ -10,6 +9,6 @@ Ext.define("Courier.view.parcel.drilldown.Window",{
     padding: '5',
 
     items: [{
-    	xtype: 'parcel-drilldown-panel'
+        xtype: 'parcel-drilldown-panel'
     }]
 });

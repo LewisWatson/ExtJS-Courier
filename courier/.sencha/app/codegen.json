@@ -54,7 +54,7 @@
         "packagesRelPath": "../ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
-        "uniqueId": "b8421837-e2fb-45e4-b9f1-ee6828783dbe",
+        "uniqueId": "e3a788a2-bced-4f02-92e4-6d8adcf1591c",
         "viewFileName": "Main",
         "viewName": "Main",
         "viewNamespace": "Courier.view"
@@ -79,7 +79,7 @@
         "packagesRelPath": "../ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
-        "uniqueId": "b8421837-e2fb-45e4-b9f1-ee6828783dbe",
+        "uniqueId": "e3a788a2-bced-4f02-92e4-6d8adcf1591c",
         "viewFileName": "Main",
         "viewName": "Main",
         "viewNamespace": "Courier.view"
@@ -104,7 +104,7 @@
         "packagesRelPath": "../ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
-        "uniqueId": "b8421837-e2fb-45e4-b9f1-ee6828783dbe",
+        "uniqueId": "e3a788a2-bced-4f02-92e4-6d8adcf1591c",
         "viewFileName": "Main",
         "viewName": "Main",
         "viewNamespace": "Courier.view"
@@ -129,7 +129,7 @@
         "packagesRelPath": "../ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
-        "uniqueId": "b8421837-e2fb-45e4-b9f1-ee6828783dbe",
+        "uniqueId": "e3a788a2-bced-4f02-92e4-6d8adcf1591c",
         "viewFileName": "Main",
         "viewName": "Main",
         "viewNamespace": "Courier.view"
@@ -154,7 +154,7 @@
         "packagesRelPath": "../ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
-        "uniqueId": "b8421837-e2fb-45e4-b9f1-ee6828783dbe",
+        "uniqueId": "e3a788a2-bced-4f02-92e4-6d8adcf1591c",
         "viewFileName": "Main",
         "viewName": "Main",
         "viewNamespace": "Courier.view"
@@ -179,7 +179,7 @@
         "packagesRelPath": "../ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
-        "uniqueId": "b8421837-e2fb-45e4-b9f1-ee6828783dbe",
+        "uniqueId": "e3a788a2-bced-4f02-92e4-6d8adcf1591c",
         "viewFileName": "Main",
         "viewName": "Main",
         "viewNamespace": "Courier.view"
@@ -204,7 +204,7 @@
         "packagesRelPath": "../ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
-        "uniqueId": "b8421837-e2fb-45e4-b9f1-ee6828783dbe",
+        "uniqueId": "e3a788a2-bced-4f02-92e4-6d8adcf1591c",
         "viewFileName": "Main",
         "viewName": "Main",
         "viewNamespace": "Courier.view"
@@ -229,7 +229,7 @@
         "packagesRelPath": "../ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
-        "uniqueId": "b8421837-e2fb-45e4-b9f1-ee6828783dbe",
+        "uniqueId": "e3a788a2-bced-4f02-92e4-6d8adcf1591c",
         "viewFileName": "Main",
         "viewName": "Main",
         "viewNamespace": "Courier.view"
@@ -254,22 +254,22 @@
         "packagesRelPath": "../ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
-        "uniqueId": "b8421837-e2fb-45e4-b9f1-ee6828783dbe",
+        "uniqueId": "e3a788a2-bced-4f02-92e4-6d8adcf1591c",
         "viewFileName": "Main",
         "viewName": "Main",
         "viewNamespace": "Courier.view"
       }
     },
-    "app/model/Package.js": {
+    "app/model/Parcel.js": {
       "source": "{modelFileName}.js.tpl.merge",
       "version": "31d5356142a167c72422f7902f19df3c583f3249",
       "parameters": {
         "appName": "Courier",
         "baseClass": "Ext.data.Model",
         "fields": "id:int:null,description:string:null,location:int:null",
-        "modelFileName": "Package",
+        "modelFileName": "Parcel",
         "modelNamespace": "Courier.model",
-        "name": "Package"
+        "name": "Parcel"
       }
     },
     "app/controller/view/parcel/Grid.js": {
