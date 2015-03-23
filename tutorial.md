@@ -220,18 +220,20 @@ While in the courier directory
 
 This will generate three new JavaScript files following the MVVC pattern in `courier/app/view/parcel`. We are following the MVC pattern in this tutorial so delete `GridController.js` and `GridModel.js` and edit `Grid.js` to look like this:
 
-    Ext.define("Courier.view.parcel.Grid",{
-        extend: "Ext.grid.Panel",
-        xtype: "parcel-grid",
+```JavaScript 
+Ext.define("Courier.view.parcel.Grid",{
+    extend: "Ext.grid.Panel",
+    xtype: "parcel-grid",
 
-        store: "Parcels",
+    store: "Parcels",
 
-        columns: [{
-            dataIndex: "id"
-        }, {
-            text: "Description", dataIndex: "description", flex: 1
-        }]
-    });
+    columns: [{
+        dataIndex: "id"
+    }, {
+        text: "Description", dataIndex: "description", flex: 1
+    }]
+});
+```
 
 #### Adding parcel-grid to the application
 
