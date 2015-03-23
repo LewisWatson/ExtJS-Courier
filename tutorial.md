@@ -89,39 +89,41 @@ You may find that you will need to run `sencha app build` in order to update the
 ### The Model
 
 We are going to display some parcel data from the following JSON
-    
-    {
-        "data": [{
-            "id": 1,
-            "description": "lewmart order 1245",
-            "location": 1
-        }, {
-            "id": 2,
-            "description": "lewmart order 3242",
-            "location": 2
-        }, {
-            "id": 3,
-            "description": "lewmart order 5434",
-            "location": 1
-        }, {
-            "id": 4,
-            "description": "lewmart order 2352",
-            "location": 3
-        }, {
-            "id": 5,
-            "description": "lewmart order 8797",
-            "location": 2
-        }, {
-            "id": 6,
-            "description": "lewmart order 3451",
-            "location": 1
-        }, {
-            "id": 7,
-            "description": "lewmart order 9774",
-            "location": 2
-        }],
-        "success": true
-    }
+
+```JSON    
+{
+    "data": [{
+        "id": 1,
+        "description": "lewmart order 1245",
+        "location": 1
+    }, {
+        "id": 2,
+        "description": "lewmart order 3242",
+        "location": 2
+    }, {
+        "id": 3,
+        "description": "lewmart order 5434",
+        "location": 1
+    }, {
+        "id": 4,
+        "description": "lewmart order 2352",
+        "location": 3
+    }, {
+        "id": 5,
+        "description": "lewmart order 8797",
+        "location": 2
+    }, {
+        "id": 6,
+        "description": "lewmart order 3451",
+        "location": 1
+    }, {
+        "id": 7,
+        "description": "lewmart order 9774",
+        "location": 2
+    }],
+    "success": true
+}
+```
 
 Use Sencha Cmd to generate a model class for the courier app. From the Courier app directory `~/Sencha/workspaces/courier/`.
 
@@ -129,84 +131,92 @@ Use Sencha Cmd to generate a model class for the courier app. From the Courier a
 
 Which will generate `/courierapp/model/Parcel.js`
 
-    Ext.define('Courier.model.Parcel', {
-        extend: 'Ext.data.Model',
-        
-        fields: [
-            { name: 'id', type: 'int' },
-            { name: 'description', type: 'string' },
-            { name: 'location', type: 'int' }
+```JavaScript
+Ext.define('Courier.model.Parcel', {
+    extend: 'Ext.data.Model',
+    
+    fields: [
+        { name: 'id', type: 'int' },
+        { name: 'description', type: 'string' },
+        { name: 'location', type: 'int' }
 
-        ]
-    });
+    ]
+});
+```
 
 ### Parcel Store
 
 In order to load data into the application, we will need to create a store. Sencha Cmd doesn't support store generation so create `courier/app/store/Parcels.js`
 
-    Ext.define('Courier.store.Parcels', {
-        extend: 'Ext.data.Store',
-        model:'Courier.model.Parcel',
-        storeId: 'parcels',
-        autoLoad: true,
+```JavaScript
+Ext.define('Courier.store.Parcels', {
+    extend: 'Ext.data.Store',
+    model:'Courier.model.Parcel',
+    storeId: 'parcels',
+    autoLoad: true,
 
-        proxy: {
-            type: 'ajax',
-            url: 'resources/data/parcels.json',
-            reader: {
-                type: 'json',
-                rootProperty: 'data'
-            }
+    proxy: {
+        type: 'ajax',
+        url: 'resources/data/parcels.json',
+        reader: {
+            type: 'json',
+            rootProperty: 'data'
         }
-    });
+    }
+});
+```
 
 This is going to be a global store so add a reference to `courier/app/Application.js`
 
-    Ext.define('Courier.Application', {
-        
-        ...
+```JavaScript
+Ext.define('Courier.Application', {
+    
+    ...
 
-        stores: [
-            'Parcels'
-        ],
-        
-        ...
-    });
+    stores: [
+        'Parcels'
+    ],
+    
+    ...
+});
+```
 
 Now create a static JSON file for the store to load `courier/resources/data/parcels.json`
 
-    {
-        "data": [{
-            "id": 1,
-            "description": "lewmart order 1245",
-            "location": 1
-        }, {
-            "id": 2,
-            "description": "lewmart order 3242",
-            "location": 2
-        }, {
-            "id": 3,
-            "description": "lewmart order 5434",
-            "location": 1
-        }, {
-            "id": 4,
-            "description": "lewmart order 2352",
-            "location": 3
-        }, {
-            "id": 5,
-            "description": "lewmart order 8797",
-            "location": 2
-        }, {
-            "id": 6,
-            "description": "lewmart order 3451",
-            "location": 1
-        }, {
-            "id": 7,
-            "description": "lewmart order 9774",
-            "location": 2
-        }],
-        "success": true
-    }
+```JSON
+{
+    "data": [{
+        "id": 1,
+        "description": "lewmart order 1245",
+        "location": 1
+    }, {
+        "id": 2,
+        "description": "lewmart order 3242",
+        "location": 2
+    }, {
+        "id": 3,
+        "description": "lewmart order 5434",
+        "location": 1
+    }, {
+        "id": 4,
+        "description": "lewmart order 2352",
+        "location": 3
+    }, {
+        "id": 5,
+        "description": "lewmart order 8797",
+        "location": 2
+    }, {
+        "id": 6,
+        "description": "lewmart order 3451",
+        "location": 1
+    }, {
+        "id": 7,
+        "description": "lewmart order 9774",
+        "location": 2
+    }],
+    "success": true
+}
+```
 
 If you have the server running then you should now be able to view `parcels.json` at <http://localhost:1841/courier/resources/data/parcels.json>
 
@@ -220,7 +230,7 @@ While in the courier directory
 
 This will generate three new JavaScript files following the MVVC pattern in `courier/app/view/parcel`. We are following the MVC pattern in this tutorial so delete `GridController.js` and `GridModel.js` and edit `Grid.js` to look like this:
 
-```JavaScript 
+```JavaScript
 Ext.define("Courier.view.parcel.Grid",{
     extend: "Ext.grid.Panel",
     xtype: "parcel-grid",
@@ -239,29 +249,31 @@ Ext.define("Courier.view.parcel.Grid",{
 
 We can use our new parcel-grid by simply adding it to the existing Main view `courier/app/view/main/Main.js`
 
-    Ext.define('Courier.view.main.Main', {
-        extend: 'Ext.container.Container',
-        requires: [
-            ...
-            'Courier.view.parcel.Grid'
-        ],
-
+```JavaScript
+Ext.define('Courier.view.main.Main', {
+    extend: 'Ext.container.Container',
+    requires: [
         ...
+        'Courier.view.parcel.Grid'
+    ],
 
-        items: [{
-            ...
-        },{
-            region: 'center',
-            xtype: 'tabpanel',
-            items:[{
-                title: 'Parcel Grid',
-                xtype: 'parcel-grid'
-            }, {
-                title: 'Tab 2',
-                html: '<h2>Content appropriate for the current navigation.</h2>'
-            }]
+    ...
+
+    items: [{
+        ...
+    },{
+        region: 'center',
+        xtype: 'tabpanel',
+        items:[{
+            title: 'Parcel Grid',
+            xtype: 'parcel-grid'
+        }, {
+            title: 'Tab 2',
+            html: '<h2>Content appropriate for the current navigation.</h2>'
         }]
-    });
+    }]
+});
+```
 
 The updated application should now be available at <http://localhost:1841/courier/>
 
@@ -277,29 +289,31 @@ Just like before, delete the non MVC files `PanelController.js` and `PanelModel.
 
 Edit `courier/app/view/parcel/drilldown/Panel.js` to look like this:
 
-    Ext.define("Courier.view.parcel.drilldown.Panel",{
-        extend: "Ext.form.Panel",
+```JavaScript
+Ext.define("Courier.view.parcel.drilldown.Panel",{
+    extend: "Ext.form.Panel",
 
-        xtype: "parcel-drilldown-panel",
+    xtype: "parcel-drilldown-panel",
 
-        defaults: {
-            readOnly: true
-        },
+    defaults: {
+        readOnly: true
+    },
 
-        items: [{
-            xtype: 'numberfield',
-            name: 'id',
-            fieldLabel: 'id'
-        }, {
-            xtype: 'textfield',
-            name: 'description',
-            fieldLabel: 'description'
-        }, {
-            xtype: 'numberfield',
-            name: 'location',
-            fieldLabel: 'location'
-        }]
-    });
+    items: [{
+        xtype: 'numberfield',
+        name: 'id',
+        fieldLabel: 'id'
+    }, {
+        xtype: 'textfield',
+        name: 'description',
+        fieldLabel: 'description'
+    }, {
+        xtype: 'numberfield',
+        name: 'location',
+        fieldLabel: 'location'
+    }]
+});
+```
 
 #### Drill Down Window
 
@@ -307,20 +321,22 @@ Edit `courier/app/view/parcel/drilldown/Panel.js` to look like this:
 
 Delete the non MVC files and edit `courier/app/view/parcel/drilldown/Window.js` to be a window that contains the `parcel-drilldown-panel`.
 
-    Ext.define("Courier.view.parcel.drilldown.Window",{
-        extend: "Ext.window.Window",
-        requires: [
-            'Courier.view.parcel.drilldown.Panel'
-        ],
+```JavaScript
+Ext.define("Courier.view.parcel.drilldown.Window",{
+    extend: "Ext.window.Window",
+    requires: [
+        'Courier.view.parcel.drilldown.Panel'
+    ],
 
-        title: 'Parcel',
+    title: 'Parcel',
 
-        padding: '5',
+    padding: '5',
 
-        items: [{
-            xtype: 'parcel-drilldown-panel'
-        }]
-    });
+    items: [{
+        xtype: 'parcel-drilldown-panel'
+    }]
+});
+```
 
 #### Parcel Grid View Controller
 
@@ -330,48 +346,52 @@ We now need some sort of mechanism to display the drill down window when a user 
 
 Add the following code to `courier/app/controller/view/parcel/Grid.js` to display the drill down window:
 
-    Ext.define('Courier.controller.view.parcel.Grid', {
-        extend: 'Ext.app.Controller',
-        requires: [
-            'Courier.view.parcel.drilldown.Window'
-        ],
+```JavaScript
+Ext.define('Courier.controller.view.parcel.Grid', {
+    extend: 'Ext.app.Controller',
+    requires: [
+        'Courier.view.parcel.drilldown.Window'
+    ],
 
-        refs: [{
-            ref: 'parcelGrid',
-            selector: 'parcel-grid'
-        }],
+    refs: [{
+        ref: 'parcelGrid',
+        selector: 'parcel-grid'
+    }],
 
-        init: function() {
-            this.control({
-                'parcelGrid': {
-                    rowClick: this.onRowClick
-                }
-            })
-        },
+    init: function() {
+        this.control({
+            'parcelGrid': {
+                rowClick: this.onRowClick
+            }
+        })
+    },
 
-        onRowClick: function(grid, parcel, tr) {
-            var window = Ext.create('Courier.view.parcel.drilldown.Window', {
-                animateTarget: tr,
-            });
+    onRowClick: function(grid, parcel, tr) {
+        var window = Ext.create('Courier.view.parcel.drilldown.Window', {
+            animateTarget: tr,
+        });
 
-            window.down('form').loadRecord(parcel);
-            window.setTitle(window.getTitle() + ': ' + parcel.get('description'));
-            window.show();
-        }
-    });
+        window.down('form').loadRecord(parcel);
+        window.setTitle(window.getTitle() + ': ' + parcel.get('description'));
+        window.show();
+    }
+});
+```
 
 `view.parcel.Grid` controller is going to be a global controller so a reference needs to be added to `courier/app/Application.js`
 
-    Ext.define('Courier.Application', {
+```JavaScript
+Ext.define('Courier.Application', {
 
-        ...
-        
-        controllers: [
-            'view.parcel.Grid'
-        ],
+    ...
+    
+    controllers: [
+        'view.parcel.Grid'
+    ],
 
-        ...
-    });
+    ...
+});
+```
 
 Reload <http://localhost:1841/courier/> and the drill down window will now appear when you click on rows in `parcel-grid`.
 
@@ -381,21 +401,23 @@ One of the most useful features of ExtJS controllers is that they can be complet
 
 Create a new method in the `view.parcel.Grid` controller that generates an application event. Then add a call to it at the end of `onRowClick`
 
-    Ext.define('Courier.controller.view.parcel.Grid', {
-        
-        ...
+```JavaScript
+Ext.define('Courier.controller.view.parcel.Grid', {
+    
+    ...
 
-        onRowClick: function(grid, parcel, tr) {
+    onRowClick: function(grid, parcel, tr) {
 
-           ...
+       ...
 
-           this.deleteParcel(parcel);
-        }
+       this.deleteParcel(parcel);
+    }
 
-        deleteParcel: function(parcel) {
-            this.getApplication().fireEvent('deleteParcel', parcel);
-        }
-    });
+    deleteParcel: function(parcel) {
+        this.getApplication().fireEvent('deleteParcel', parcel);
+    }
+});
+```
 
 Now create new controller that will handle deleteParcel application events.
 
@@ -403,34 +425,38 @@ Now create new controller that will handle deleteParcel application events.
 
 Add the following functionality:
 
-    Ext.define('Courier.controller.Parcel', {
-        extend: 'Ext.app.Controller',
+```JavaScript
+Ext.define('Courier.controller.Parcel', {
+    extend: 'Ext.app.Controller',
 
-        init: function() {
-            this.application.on({
-                deleteParcel: this.deleteParcel,
-                scope: this
-            });
-        },
+    init: function() {
+        this.application.on({
+            deleteParcel: this.deleteParcel,
+            scope: this
+        });
+    },
 
-        deleteParcel: function(parcel) {
-            console.log('delete');
-            // parcel.erase();
-        }
-    });
+    deleteParcel: function(parcel) {
+        console.log('delete');
+        // parcel.erase();
+    }
+});
+```
 
 and add the `Parcel` controller to `courier/app/Application.js`
 
-    Ext.define('Courier.Application', {
-        
-        ...
-        
-        controllers: [
-            'Parcel',
-            'view.parcel.Grid'
-        ],
+```JavaScript
+Ext.define('Courier.Application', {
+    
+    ...
+    
+    controllers: [
+        'Parcel',
+        'view.parcel.Grid'
+    ],
 
-        ...
-    });
+    ...
+});
+```
 
 Reload <http://localhost:1841/courier/> and you will now see a console message every time you click on a row in `parcel-grid`. The `parcel.erase()` line that is commented out is how you could send a delete command to the server when the underlying proxy is set up for CRUD operations.
