@@ -10,3 +10,7 @@ A step by step tutorial for creating this application from scratch is available 
 ## Demo
 
 A live demo of can be found [here](http://lewiswatson.github.io/ExtJS-Courier/)
+
+## Fonts
+
+Font Awesome by Dave Gandy - http://fontawesome.io
