@@ -5,6 +5,7 @@ Ext.define("Courier.view.parcel.drilldown.Window",{
     ],
 
     title: 'Parcel',
+    iconCls: 'fa fa-paper-plane',
 
     padding: '5',
 

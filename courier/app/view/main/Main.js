@@ -27,14 +27,15 @@ Ext.define('Courier.view.main.Main', {
     items: [{
         xtype: 'panel',
         bind: {
-            title: '{name}'
+            title: '<i class="fa fa-truck"></i> {name}'
         },
         region: 'west',
-        html: '<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>',
+        html: '<i style="color:#d3d7cf;font-size:15em" class="fa fa-truck"></i>',
         width: 250,
         split: true,
         tbar: [{
             text: 'Button',
+            iconCls: 'fa fa-rocket',
             handler: 'onClickButton'
         }]
     },{
@@ -44,8 +45,8 @@ Ext.define('Courier.view.main.Main', {
             title: 'Parcel Grid',
             xtype: 'parcel-grid'
         }, {
-            title: 'Tab 2',
-            html: '<h2>Content appropriate for the current navigation.</h2>'
+            title: 'Coffee Tab',
+            html: '<i style="color:#8f5902;font-size:15em; margin:0.05em" class="fa fa-coffee"></i></h2>'
         }]
     }]
 });
